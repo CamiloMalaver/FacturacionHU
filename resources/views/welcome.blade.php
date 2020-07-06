@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Facturación HU
                 </div>
 
                 <div class="links">
