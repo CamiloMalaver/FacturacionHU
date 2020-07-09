@@ -24,7 +24,7 @@
             }
 
             .full-height {
-                height: 50vh;
+                height: 70vh;
             }
 
             .flex-center {
@@ -48,7 +48,7 @@
             }
 
             .title {
-                color: #ffffff;
+                color: #000000;
                 font-size: 120px;
                 font-weight: 900;
             }
@@ -74,41 +74,24 @@
     </head>
     <body style="background-image: url({{asset('../resources/img/bgimg.jpg')}}); background-position: center; background-repeat: no-repeat; background-size: cover;">
         <div class="flex-center position-ref full-height">
-            <div class="content" style="background: rgba(253, 251, 251, 0.20);">
-                <div class="title m-b-md">
-                    Facturación HU
+            <div class="content">
+                <div class="row justify-content-center">
+                    <img src="{{asset('../resources/img/logo.png')}}" width="400">
                 </div>
+                <br>
                 <div class="row">
-
-                    <div class="col links">
-                        <div class="row  justify-content-center">
-                            <img src="{{asset('../resources/img/add.png')}}" width="50">
-                        </div>
-                        <div class="row justify-content-center links">
-                            <a href="">Crear</a>
-                        </div>
-                    </div>
-                    
-                    <div class="col links">
-                        <div class="row  justify-content-center">
-                            <img src="{{asset('../resources/img/document.png')}}" width="50">
-                        </div>
-                        <div class="row justify-content-center links">
-                            <a href="">Archivo</a>
-                        </div>
-                    </div>
-
-                    <div class="col links">
-                        <div class="row  justify-content-center">
-                            <img src="{{asset('../resources/img/customer.png')}}" width="50">
-                        </div>
-                        <div class="row justify-content-center links">
-                            <a href="">Clientes</a>
-                        </div>
-                    </div>
-
+                    <br>
+                    <div class="col links">             
+                        <button type="button" class="btn btn-info btn-lg btn-block font-weight-bold">Crear</button>
+                    </div>                    
+                    <div class="col links">             
+                        <button type="button" class="btn btn-info btn-lg btn-block font-weight-bold">Archivos</button>
+                    </div>   
+                    <div class="col links">             
+                        <button type="button" class="btn btn-info btn-lg btn-block font-weight-bold">Clientes</button>
+                    </div>                      
+                    <br>              
                 </div>
-                
             </div>
         </div>
     </body>
