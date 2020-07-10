@@ -72,25 +72,25 @@
         </style>
     </head>
     <body style="background-image: url({{asset('../resources/img/bgimg.jpg')}}); background-position: center; background-repeat: no-repeat; background-size: cover;">
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-                <div class="row justify-content-center">
+        <div class="container">            
+            <div class="row justify-content-md-center">
+                <div class="col-lg-auto">                   
                     <img src="{{asset('../resources/img/logo.png')}}" width="400">
                 </div>
+            </div>
+            <br>
+            <div class="row justify-content-md-center">
                 <br>
-                <div class="row">
-                    <br>
-                    <div class="col links">             
-                        <button type="button" class="btn btn-info btn-lg font-weight-bold" data-toggle="modal" data-target="#exampleModal">Crear</button>
-                    </div>                    
-                    <div class="col links">             
-                        <button type="button" class="btn btn-info btn-lg font-weight-bold">Archivos</button>
-                    </div>   
-                    <div class="col links">             
-                        <button type="button" class="btn btn-info btn-lg font-weight-bold">Clientes</button>
-                    </div>                      
-                    <br>              
-                </div>
+                <div class="col col-lg-2 links">             
+                    <button type="button" class="btn btn-info btn-lg font-weight-bold" data-toggle="modal" data-target="#exampleModal">Crear</button>
+                </div>                    
+                <div class="col col-lg-2 links">             
+                    <button type="button" class="btn btn-info btn-lg font-weight-bold">Archivos</button>
+                </div>   
+                <div class="col col-lg-2 links">             
+                    <button type="button" class="btn btn-info btn-lg font-weight-bold">Clientes</button>
+                </div>                      
+                <br>              
             </div>
         </div>
     </body>
