@@ -7,10 +7,17 @@ $( document ).ready(function() {
             success : function(data){
                 $("#content").html(data);            
             }
-        });
-        
-
+        }); 
     });
 
+    //Boton clientes
+    $('#btn-clientes').click(function(){
+        $.ajax({
+            url : "Clientes",
+            success : function(data){
+                $("#content").html(data);            
+            }
+        }); 
+    });
 
 });
