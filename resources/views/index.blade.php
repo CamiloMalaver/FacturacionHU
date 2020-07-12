@@ -9,14 +9,12 @@
 
         <title>Facturación</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+       
         <!-- Styles -->
         <style>
             html, body {
                 color: #636b6f;
-                font-family: 'Nunito', sans-serif;
+                font-family: verdana;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
@@ -62,10 +60,6 @@
                 text-transform: uppercase;
             }
 
-            .links:hover {
-              color: hotpink;
-            }
-
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -73,6 +67,7 @@
     </head>
 
     <body style="background-image: url({{asset('../resources/img/bgimg.jpg')}}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                      
         <div class="container"> 
             <br>           
             <div class="row justify-content-center">

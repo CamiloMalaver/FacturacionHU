@@ -1,11 +1,11 @@
 <div class="container rounded" style="background-color: rgba(255,255,255,0.80);">
     <br>
     <div class="row justify-content-center">
-    <div class="col-2">
-            <button id="btn-cot" class="btn btn btn-secondary">Cotizaciones</button>  
+    <div class="col-3">
+            <button id="btn-cot" class="btn btn-secondary">Cotizaciones</button>  
         </div>
-        <div class="col-2">
-             <button id="btn-cuent" class="btn btn btn-secondary">Cuentas de cobro</button>
+        <div class="col-3">
+             <button id="btn-cuent" class="btn btn-secondary">Cuentas de cobro</button>
         </div>           
     </div>
     <br>
