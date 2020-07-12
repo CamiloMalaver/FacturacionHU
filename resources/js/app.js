@@ -20,4 +20,24 @@ $( document ).ready(function() {
         }); 
     });
 
+    //Boton cotizaciones
+    $('#btn-cot').click(function(){
+        $.ajax({
+            url : "Archivos",
+            success : function(data){
+                $("#content").html(data);            
+            }
+        }); 
+    });
+
+     //Boton cotizaciones
+     $('#btn-cuent').click(function(){
+        $.ajax({
+            url : "ArchivosCuent",
+            success : function(data){
+                $("#content").html(data);            
+            }
+        }); 
+    });
+
 });
