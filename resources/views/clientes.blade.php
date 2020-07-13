@@ -2,22 +2,7 @@
     <br>
     <div class="row justify-content-center">
         <button class="btn btn-primary" data-toggle="modal" data-target="#addClient">Agregar nuevo</button>
-    </div>
-    <!--Alerts-->
-        @if(session()->has('clientSaved'))
-            <div class="row justify-content-center">
-                <div class="col-sm-3">
-                    <br>
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{session('clientSaved')}}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>            
-            </div>
-            {{session()->forget('clientSaved')}}
-        @endif
+    </div>    
     <p>
     <table class="table table-striped">
       <thead class="thead-dark">
@@ -28,11 +13,13 @@
         </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td><button class="btn btn-sm btn-warning">Actualizar</button></td>
-            </tr>            
+            @foreach($clientes as $client)
+                <tr>
+                    <td>{{$client->nombre}}</td>
+                    <td>{{$client->telefono}}</td>
+                    <td><button class="btn btn-sm btn-warning">Actualizar</button></td>
+                </tr> 
+            @endforeach                       
         </tbody>
     </table>
     <br>
@@ -48,7 +35,7 @@
                 <div class="modal-header justify-content-center" style="background-color: rgb(164, 212, 196)">
                     <h3 class="modal-title font-weight-bold" id="exampleModalLabel" style="color: white;">Nuevo cliente</h3>
                 </div>
-                <form id="newClient" action="" autocomplete="off">
+                <form method="POST" action="{{route('postAddClient')}}" autocomplete="off">
                     @csrf
                     <div class="modal-body">   
                         <div class="field_wrapper rounded border container">            
@@ -82,7 +69,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-success" data-dismiss="modal" onclick="addNewClient()">Agregar</button>
+                        <button type="submit" class="btn btn-success">Agregar</button>
                     </div>
                 </form>
             </div>

@@ -41,14 +41,3 @@ $( document ).ready(function() {
     });
 
 });
-
-function addNewClient(){
-    $.ajax({                        
-       type: "POST",                 
-       url:  "addClient",                    
-       data: $("#newClient").serialize(), 
-       success: function(){ 
-            $("#btn-clientes").click();
-        }
-    });
-}

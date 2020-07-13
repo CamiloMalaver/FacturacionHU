@@ -67,7 +67,21 @@
     </head>
 
     <body style="background-image: url({{asset('../resources/img/bgimg.jpg')}}); background-position: center; background-repeat: no-repeat; background-size: cover;">
-                      
+        <div class="row">
+            <div class="col-md-3 offset-md-8">
+                <!--Alerts-->
+                @if(session()->has('clientSaved'))
+                    <br>                    
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{session('clientSaved')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>  
+                    </div>
+                    {{session()->forget('clientSaved')}}
+                @endif
+            </div>
+        </div>              
         <div class="container"> 
             <br>           
             <div class="row justify-content-center">
