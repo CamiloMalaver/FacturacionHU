@@ -119,7 +119,7 @@
             var maxField = 10; //Input fields increment limitation
             var addButton = $('.add_button'); //Add button selector
             var wrapper = $('.field_wrapper'); //Input field wrapper
-            var fieldHTML = '<div class="container"><div class="row"><div class="col-sm-2"><input type="number" class="form-control border" name="field_name[]" placeholder="Cant" required></div><div class="col-lg"><input type="text" class="form-control border" name="field_name[]" placeholder="Nombre" required></div><div class="col-sm-3"><input type="number" class="form-control border" name="field_name[]" placeholder="Valor unitario" required></div><div class="col-"></div><a href="javascript:void(0);" class="remove_button" title="Eliminar campo"> <img src="{{asset('/../resources/img/minus.png')}}" height="30"></a></div></div><p>'; //New input field html 
+            var fieldHTML = '<div class="container"><div class="row align-items-center"><div class="col-sm-2"><input type="number" class="form-control border" name="field_name[]" placeholder="Cant" required></div><div class="col-lg"><textarea type="text" class="form-control border" rows="2" name="field_name[]" placeholder="Descripción" required></textarea></div><div class="col-sm-3"><input type="number" class="form-control border" name="field_name[]" placeholder="Valor unitario" required></div><div class="col-"></div><a href="javascript:void(0);" class="remove_button" title="Eliminar campo"> <img src="{{asset('/../resources/img/minus.png')}}" height="30"></a></div></div><p>'; //New input field html 
             var x = 1; //Initial field counter is 1
             $(addButton).click(function(){ //Once add button is clicked
                 if(x < maxField){ //Check maximum number of input fields
@@ -159,20 +159,20 @@
                     <div class="field_wrapper rounded border container">            
                         <label class="form-group font-weight-bold">Items</label>            
                         <div class="container">
-                        <div class="row">
-                            <div class="col-sm-2">
-                            <input type="number" class="form-control border" name="field_name[]" placeholder="Cant" required>
+                            <div class="row align-items-center">
+                                <div class="col-sm-2">
+                                <input type="number" class="form-control border" name="field_name[]" placeholder="Cant" required>
+                                    </div>
+                                <div class="col-lg">
+                                    <textarea type="text" class="form-control border" rows="2" name="field_name[]" placeholder="Descripción" required></textarea>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control border" name="field_name[]" placeholder="Valor unitario" required>
+                                </div>
+                                <div class="col-">
+                                    <a href="javascript:void(0);" class="add_button" title="Agregar campo"> <img src="{{asset('/../resources/img/plus.png')}}" height="30"></a>
+                                </div>
                             </div>
-                            <div class="col-lg">
-                            <input type="text" class="form-control border" name="field_name[]" placeholder="Descripción" required>
-                            </div>
-                            <div class="col-sm-3">
-                            <input type="number" class="form-control border" name="field_name[]" placeholder="Valor unitario" required>
-                            </div>
-                            <div class="col-">
-                            <a href="javascript:void(0);" class="add_button" title="Agregar campo"> <img src="{{asset('/../resources/img/plus.png')}}" height="30"></a>
-                            </div>
-                        </div>
                         </div>  
                         <p>          
                     </div>
