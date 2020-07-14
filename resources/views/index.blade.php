@@ -150,8 +150,9 @@
                             <label class="input-group-text" for="inputGroupSelect02">Cliente</label>
                         </div>
                         <select class="custom-select" id="inputGroupSelect01" name="cliente">
-                            <option value="1">Andrea Suluaga</option>
-                            <option value="2">Los Olivos</option>
+                            @foreach($clientes as $client)
+                                <option value="{{$client->id}}">{{$client->nombre}}</option>
+                            @endforeach                            
                         </select>
                     </div>
 

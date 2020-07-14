@@ -19,7 +19,8 @@ class clientes extends Controller
     }
 
     public static function listClients(){
-        $list = DB::table('cliente')
+        $list = DB::table('cliente')       
+        ->orderBy('nombre', 'asc')
         ->paginate(10);
         return $list;
     }
