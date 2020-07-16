@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -107,6 +108,7 @@
         <div id="content" class="container"></div>
 
     </body>
+
 </html>
 
 <!--Scripts-->
@@ -155,6 +157,26 @@
                             @endforeach                            
                         </select>
                     </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="field_wrapper rounded border container">            
+                                <label class="form-group font-weight-bold">Fecha de creación</label>            
+                                <div class="container">
+                                    <input type="date" name="fcreacion" value="">
+                                </div>   
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="field_wrapper rounded border container">            
+                                <label class="form-group font-weight-bold">Fecha de vencimiento</label>            
+                                <div class="container">
+                                    <input type="date" name="fvencimiento" value="">
+                                </div>   
+                            </div>
+                        </div>                        
+                    </div>
+                    <p>
 
                     <div class="field_wrapper rounded border container">            
                         <label class="form-group font-weight-bold">Items</label>            
