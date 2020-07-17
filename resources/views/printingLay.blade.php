@@ -20,22 +20,22 @@
     <!--Client info-->
     <div style="border:solid; border-width:2px; border-radius:5px; border-color:rgb(115, 188, 167);">
         <div class="row">
-            <div class="col"><span class="texthu">FECHA DE EXPEDICIÓN</span>bgfndfndrn</div>
-            <div class="col"><span class="texthu">FECHA DE VENCIMIENTO</span>htr4ehtreth</div>
+            <div class="col"><span class="texthu">FECHA DE EXPEDICIÓN: </span>bgfndfndrn</div>
+            <div class="col"><span class="texthu">FECHA DE VENCIMIENTO: </span>htr4ehtreth</div>
         </div>
         <div class="row">
-            <div class="col"><span class="texthu">SEÑORES</span>bgfndfndrn</div>
-            <div class="col"><span class="texthu">CC O NIT</span>htr4ehtreth</div>
+            <div class="col"><span class="texthu">SEÑORES: </span>bgfndfndrn</div>
+            <div class="col"><span class="texthu">CC O NIT: </span>htr4ehtreth</div>
         </div>
         <div class="row">
-            <div class="col"><span class="texthu">DIRECCIÓN</span>bgfndfndrn</div>
-            <div class="col"><span class="texthu">TELÉFONO</span>htr4ehtreth</div>
+            <div class="col"><span class="texthu">DIRECCIÓN: </span>bgfndfndrn</div>
+            <div class="col"><span class="texthu">TELÉFONO: </span>htr4ehtreth</div>
         </div>         
     </div>
     <br>
     <!--Body-->  
     <table class="table table-striped">
-        <thead>
+        <thead style="background-color: rgb(115, 188, 167);">
             <tr>
             <th scope="col">CANT</th>
             <th scope="col">DESCRIPCIÓN</th>
@@ -52,6 +52,15 @@
             </tr>            
         </tbody>
     </table>
+    <!--Footer-->       
+    <div class="row container">
+        <div class="col-8" style="background-color:rgb(115, 188, 167); border:solid; border-width:2px; border-radius:5px; border-color:rgb(115, 188, 167);">
+            <span class="font-weight-bold">VALOR EN LETRAS: </span>
+        </div>
+        <div class="col-3 offset-sm-1" style="border:solid; border-width:2px; border-radius:5px; border-color:rgb(115, 188, 167);">
+            <span class="font-weight-bold">TOTAL A PAGAR: </span> 
+        </div>
+    </div>
 
 </div>
 

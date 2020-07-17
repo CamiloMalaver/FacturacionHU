@@ -22,7 +22,6 @@
             @endforeach                       
         </tbody>
     </table>
-    <br>
 </div>
  <!--Scripts-->
      <script src="../resources/js/app.js"></script>   

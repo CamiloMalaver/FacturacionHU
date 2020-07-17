@@ -67,7 +67,7 @@
         </style>
     </head>
 
-    <body style="background-image: url({{asset('../resources/img/bgimg.jpg')}}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <body style="background-image: url({{asset('../resources/img/bgimg.jpg')}}); background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
         <div class="row">
             <div class="col-md-3 offset-md-8">
                 <!--Alerts-->
@@ -160,19 +160,17 @@
 
                     <div class="row">
                         <div class="col">
-                            <div class="field_wrapper rounded border container">            
-                                <label class="form-group font-weight-bold">Fecha de creación</label>            
-                                <div class="container">
-                                    <input type="date" name="fcreacion" value="">
-                                </div>   
+                            <div class="rounded border container">            
+                                <label class="form-group font-weight-bold">Fecha de creación</label> 
+                                <input type="date" name="fcreacion" value=""> 
+                                </p>
                             </div>
                         </div>
                         <div class="col">
-                            <div class="field_wrapper rounded border container">            
+                            <div class="rounded border container">            
                                 <label class="form-group font-weight-bold">Fecha de vencimiento</label>            
-                                <div class="container">
-                                    <input type="date" name="fvencimiento" value="">
-                                </div>   
+                                <input type="date" name="fvencimiento" value="">
+                                </p>
                             </div>
                         </div>                        
                     </div>
