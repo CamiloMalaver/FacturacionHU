@@ -61,8 +61,33 @@
             <span class="font-weight-bold">TOTAL A PAGAR: </span> 
         </div>
     </div>
-
-</div>
+    </p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col" style="border:solid; border-width:2px; border-radius:5px; border-color:rgb(115, 188, 167);">
+                <center>
+                    <span style="color:rgb(115, 188, 167);">
+                        URBANO HOME
+                        <br><br>
+                        NIT: 35261460-1
+                    </span>
+                </center>                 
+            </div>
+            <div class="col offset-sm-1" style="border:solid; border-width:2px; border-radius:5px; border-color:rgb(115, 188, 167);">
+                <center>
+                    <span style="color:rgb(115, 188, 167);">
+                        RECIBÍ A CONFORMIDAD
+                        <br><br>
+                    </span>
+                </center>        
+                <span style="color:rgb(115, 188, 167);">NIT O CC:</span>         
+            </div>
+            <div class="col">
+                <center><span class="font-weight-bold" style="color:rgb(115, 188, 167); font-size: 24;">RÉGIMEN SIMPLIFICADO</span> </center>
+            </div>
+        </div>
+    </div>
+    
 
 <!--Scripts-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
