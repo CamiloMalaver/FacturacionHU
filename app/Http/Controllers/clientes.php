@@ -14,7 +14,7 @@ class clientes extends Controller
 
     public static function addClient(Request $request){
         DB::insert('INSERT INTO `cliente`(`nombre`, `nit`, `direccion`,`telefono`) VALUES (?,?,?,?)', [$request->nombreCliente, $request->idCliente, $request->direccionCliente, $request->telefonoCliente]);
-        session(['clientSaved' => '¡Registro exitoso!']);        
+        session(['clientSaved' => '¡Se ha registrado el cliente!']);        
         return back();
     }
 

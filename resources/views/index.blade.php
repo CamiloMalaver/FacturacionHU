@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
         <title>Facturación</title>
-
+        <link rel="icon" type="image/png" href="{{asset('../resources/img/favicon.png')}}"/>
        
         <!-- Styles -->
         <style>
@@ -145,63 +145,66 @@
                 <div class="modal-header justify-content-center" style="background-color: rgb(164, 212, 196)">
                     <h3 class="modal-title font-weight-bold" id="exampleModalLabel" style="color: white;">Nuevo documento</h3>
                 </div>
-                <div class="modal-body">      
+                <form method="POST" action="{{route('postAddDoc')}}" autocomplete="off">
+                    @csrf
+                    <div class="modal-body">      
 
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect02">Cliente</label>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect01" name="cliente">
-                            @foreach($clientes as $client)
-                                <option value="{{$client->id}}">{{$client->nombre}}</option>
-                            @endforeach                            
-                        </select>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="rounded border container">            
-                                <label class="form-group font-weight-bold">Fecha de creación</label> 
-                                <input type="date" name="fcreacion" value=""> 
-                                </p>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect02">Cliente</label>
                             </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="cliente">
+                                @foreach($clientes as $client)
+                                    <option value="{{$client->id}}">{{$client->nombre}}</option>
+                                @endforeach                            
+                            </select>
                         </div>
-                        <div class="col">
-                            <div class="rounded border container">            
-                                <label class="form-group font-weight-bold">Fecha de vencimiento</label>            
-                                <input type="date" name="fvencimiento" value="">
-                                </p>
-                            </div>
-                        </div>                        
-                    </div>
-                    <p>
 
-                    <div class="field_wrapper rounded border container">            
-                        <label class="form-group font-weight-bold">Items</label>            
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-sm-2">
-                                <input type="number" class="form-control border" name="field_name[]" placeholder="Cant" required>
+                        <div class="row">
+                            <div class="col">
+                                <div class="rounded border container">            
+                                    <label class="form-group font-weight-bold">Fecha de creación</label> 
+                                    <input type="date" name="fcreacion" value="" required> 
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="rounded border container">            
+                                    <label class="form-group font-weight-bold">Fecha de vencimiento</label>            
+                                    <input type="date" name="fvencimiento" value="" required>
+                                    </p>
+                                </div>
+                            </div>                        
+                        </div>
+                        <p>
+
+                        <div class="field_wrapper rounded border container">            
+                            <label class="form-group font-weight-bold">Items</label>            
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-sm-2">
+                                    <input type="number" class="form-control border" name="field_name[]" placeholder="Cant" required>
+                                        </div>
+                                    <div class="col-lg">
+                                        <textarea type="text" class="form-control border" rows="2" name="field_name[]" placeholder="Descripción" required></textarea>
                                     </div>
-                                <div class="col-lg">
-                                    <textarea type="text" class="form-control border" rows="2" name="field_name[]" placeholder="Descripción" required></textarea>
+                                    <div class="col-sm-3">
+                                        <input type="number" class="form-control border" name="field_name[]" placeholder="Valor unitario" required>
+                                    </div>
+                                    <div class="col-">
+                                        <a href="javascript:void(0);" class="add_button" title="Agregar campo"> <img src="{{asset('/../resources/img/plus.png')}}" height="30"></a>
+                                    </div>
                                 </div>
-                                <div class="col-sm-3">
-                                    <input type="number" class="form-control border" name="field_name[]" placeholder="Valor unitario" required>
-                                </div>
-                                <div class="col-">
-                                    <a href="javascript:void(0);" class="add_button" title="Agregar campo"> <img src="{{asset('/../resources/img/plus.png')}}" height="30"></a>
-                                </div>
-                            </div>
-                        </div>  
-                        <p>          
-                    </div>
+                            </div>  
+                            <p>          
+                        </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-success">Crear</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Crear</button>
+                    </div>
+                </form>    
             </div>
         </div>
     </div>
