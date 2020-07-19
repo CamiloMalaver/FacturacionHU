@@ -12,20 +12,27 @@
     <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
-            <th class="bg-primary" colspan="3">Cotizaciones</th>
+            <th class="bg-primary" colspan="4">Cotizaciones</th>
         </tr>
         <tr>
-            <th scope="col">Cliente</th>
+            <th scope="col">Consecutivo</th>
             <th scope="col">Fecha de creación</th>
+            <th scope="col">Cliente</th>
             <th scope="col">Acciones</th>
         </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
+            @foreach($cotizaciones as $cot)
+                <tr>
+                    <td>{{$cot->consecutivo}}</td>
+                    <td>{{$cot->created_at}}</td>
+                    <td>{{$cot->nombre}}</td>
+                    <td>
+                        <button title="Imprimir" class="btn btn-sm btn-info"><img src="{{asset('/../resources/img/print.png')}}" height="18"></button>
+                        <button title="Generar cuenta de cobro" class="btn btn-sm btn-info"><img src="{{asset('/../resources/img/convert.png')}}" height="18"></button>    
+                    </td>
+                </tr> 
+            @endforeach
         </tbody>
     </table>
 

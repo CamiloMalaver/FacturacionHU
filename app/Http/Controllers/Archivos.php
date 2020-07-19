@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 class Archivos extends Controller
 {
     public function getView(){
-        return view('archivoCot');
+        $cotizaciones = self::listCotizacion();
+        return view('archivoCot')->with(compact('cotizaciones'));
     }
 
     public function getCuentView(){
@@ -46,5 +47,15 @@ class Archivos extends Controller
             }
             session(['clientSaved' => '¡Se ha agregado el doc!']);        
             return back();
+    }
+
+    public static function listCotizacion(){
+        $list = DB::table('factura')
+        ->join('cliente', 'factura.id_cliente', '=', 'cliente.id')
+        ->select('factura.*', 'cliente.nombre')
+        ->where('tipo',0)       
+        ->latest()
+        ->get();
+        return $list;
     }
 }
