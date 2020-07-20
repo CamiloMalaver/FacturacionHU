@@ -13,27 +13,28 @@
             <img src="{{asset('../resources/img/info.png')}}" width="400">
         </div>
         <div class="col-3">
-            <p style="font-family: Verdana; font-size:25; color: rgb(115, 188, 167)">Cotización N° 15</p>
+            <p style="font-family: Verdana; font-size:25; color: rgb(115, 188, 167)">Cotización N° {{$factura->consecutivo}}</p>
         </div>
     </div>  
     <br>
     <!--Client info-->
     <div style="border:solid; border-width:2px; border-radius:5px; border-color:rgb(115, 188, 167);">
         <div class="row">
-            <div class="col"><span class="texthu">FECHA DE EXPEDICIÓN: </span>bgfndfndrn</div>
-            <div class="col"><span class="texthu">FECHA DE VENCIMIENTO: </span>htr4ehtreth</div>
+            <div class="col"><span class="texthu">FECHA DE EXPEDICIÓN: </span>{{$factura->created_at}}</div>
+            <div class="col"><span class="texthu">FECHA DE VENCIMIENTO: </span>{{$factura->fecha_venci}}</div>
         </div>
         <div class="row">
-            <div class="col"><span class="texthu">SEÑORES: </span>bgfndfndrn</div>
-            <div class="col"><span class="texthu">CC O NIT: </span>htr4ehtreth</div>
+            <div class="col"><span class="texthu">SEÑORES: </span>{{$factura->nombre}}</div>
+            <div class="col"><span class="texthu">CC O NIT: </span>{{$factura->nit}}</div>
         </div>
         <div class="row">
-            <div class="col"><span class="texthu">DIRECCIÓN: </span>bgfndfndrn</div>
-            <div class="col"><span class="texthu">TELÉFONO: </span>htr4ehtreth</div>
+            <div class="col"><span class="texthu">DIRECCIÓN: </span>{{$factura->direccion}}</div>
+            <div class="col"><span class="texthu">TELÉFONO: </span>{{$factura->telefono}}</div>
         </div>         
     </div>
     <br>
     <!--Body-->  
+    
     <table class="table table-striped">
         <thead style="background-color: rgb(115, 188, 167);">
             <tr>
@@ -43,22 +44,24 @@
             <th scope="col">Vr. TOTAL</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            </tr>            
+        <tbody>                             
+            @foreach($items as $it)
+                <tr> 
+                    <td>{{$it->cantidad}}</td>
+                    <td>{{$it->descripcion}}</td>
+                    <td>${{number_format($it->valor_u, 0, '.','.')}}</td>
+                    <td>${{number_format(($it->valor_u*$it->cantidad), 0, '.','.')}}</td>
+                </tr>
+            @endforeach                        
         </tbody>
     </table>
     <!--Footer-->       
     <div class="row container">
         <div class="col-8" style="background-color:rgb(115, 188, 167); border:solid; border-width:2px; border-radius:5px; border-color:rgb(115, 188, 167);">
-            <span class="font-weight-bold">VALOR EN LETRAS: </span>
+            <span class="font-weight-bold">VALOR EN LETRAS: </span>{{$totalLetras}} COP.
         </div>
         <div class="col-3 offset-sm-1" style="border:solid; border-width:2px; border-radius:5px; border-color:rgb(115, 188, 167);">
-            <span class="font-weight-bold">TOTAL A PAGAR: </span> 
+            <span class="font-weight-bold">TOTAL A PAGAR: ${{number_format(($total), 0, '.','.')}}</span> 
         </div>
     </div>
     </p>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\cifrasEnLetras;
 
 class Archivos extends Controller
 {
@@ -57,5 +58,30 @@ class Archivos extends Controller
         ->latest()
         ->get();
         return $list;
+    }
+
+    public function print($id){
+        $factura = DB::table('factura')
+            ->join('cliente', 'factura.id_cliente', '=', 'cliente.id')
+            ->where('factura.id', $id)
+            ->select('factura.*', 'cliente.*')
+            ->first();
+                
+        $items = DB::table('items')
+            ->where('id_factura', $id)
+            ->get();
+
+        $total=0;
+        foreach($items as $it){
+            $total+= $it->cantidad*$it->valor_u;
+        }
+
+        $totalLetras = cifrasEnLetras::convertirCifrasEnLetras($total);
+
+        return view('printingLay')
+            ->with(compact('factura'))
+            ->with(compact('items'))
+            ->with(compact('total'))
+            ->with(compact('totalLetras'));
     }
 }

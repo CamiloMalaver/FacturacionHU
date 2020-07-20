@@ -41,3 +41,8 @@ $( document ).ready(function() {
     });
 
 });
+
+function printCot(id){  
+    var url = "print/"+id; 
+    window.open(url, "Imprimir", 'location=yes,height=800,width=900,scrollbars=yes,status=yes');      
+};

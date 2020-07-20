@@ -28,7 +28,7 @@
                     <td>{{$cot->created_at}}</td>
                     <td>{{$cot->nombre}}</td>
                     <td>
-                        <button title="Imprimir" class="btn btn-sm btn-info"><img src="{{asset('/../resources/img/print.png')}}" height="18"></button>
+                        <button title="Imprimir" class="btn btn-sm btn-info" onclick="printCot({{$cot->id}})"><img src="{{asset('/../resources/img/print.png')}}" height="18"></button>
                         <button title="Generar cuenta de cobro" class="btn btn-sm btn-info"><img src="{{asset('/../resources/img/convert.png')}}" height="18"></button>    
                     </td>
                 </tr> 
