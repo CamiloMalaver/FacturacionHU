@@ -118,7 +118,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            var maxField = 10; //Input fields increment limitation
+            var maxField = 20; //Input fields increment limitation
             var addButton = $('.add_button'); //Add button selector
             var wrapper = $('.field_wrapper'); //Input field wrapper
             var fieldHTML = '<div class="container"><div class="row align-items-center"><div class="col-sm-2"><input type="number" class="form-control border" name="field_name[]" placeholder="Cant" required></div><div class="col-lg"><textarea type="text" class="form-control border" rows="2" name="field_name[]" placeholder="Descripción" required></textarea></div><div class="col-sm-3"><input type="number" class="form-control border" name="field_name[]" placeholder="Valor unitario" required></div><div class="col-"></div><a href="javascript:void(0);" class="remove_button" title="Eliminar campo"> <img src="{{asset('/../resources/img/minus.png')}}" height="30"></a></div></div><p>'; //New input field html 
@@ -140,7 +140,7 @@
 
     <!-- Modal Crear-->
     <div class="modal fade" id="addDoc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header justify-content-center" style="background-color: rgb(164, 212, 196)">
                     <h3 class="modal-title font-weight-bold" id="exampleModalLabel" style="color: white;">Nuevo documento</h3>

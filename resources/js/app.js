@@ -28,21 +28,6 @@ $( document ).ready(function() {
                 $("#content").html(data);            
             }
         }); 
-    });
-
-     //Boton cotizaciones
-     $('#btn-cuent').click(function(){
-        $.ajax({
-            url : "ArchivosCuent",
-            success : function(data){
-                $("#content").html(data);            
-            }
-        }); 
-    });
+    }); 
 
 });
-
-function printCot(id){  
-    var url = "print/"+id; 
-    window.open(url, "Imprimir", 'location=yes,height=800,width=900,scrollbars=yes,status=yes');      
-};

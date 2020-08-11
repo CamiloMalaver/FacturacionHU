@@ -1,7 +1,7 @@
 <div class="container rounded" style="background-color: rgba(255,255,255,0.80);">
     <br>
     <div class="row justify-content-center">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addClient">Agregar nuevo</button>
+        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#addClient">Agregar nuevo</button>
     </div>    
     <p>
     <table class="table table-striped">
@@ -17,7 +17,10 @@
                 <tr>
                     <td>{{$client->nombre}}</td>
                     <td>{{$client->telefono}}</td>
-                    <td><button class="btn btn-sm btn-warning">Actualizar</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-warning">Actualizar</button>
+                    </td>
+                    
                 </tr> 
             @endforeach                       
         </tbody>

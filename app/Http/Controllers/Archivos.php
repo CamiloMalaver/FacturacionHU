@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\cifrasEnLetras;
+use App\Http\Controllers\clientes;
 
 class Archivos extends Controller
 {
     public function getView(){
         $cotizaciones = self::listCotizacion();
-        return view('archivoCot')->with(compact('cotizaciones'));
-    }
-
-    public function getCuentView(){
-        return view('archivoCuen');
+        $clientes = clientes::listClients();
+        return view('archivoCot')
+            ->with(compact('clientes'))
+            ->with(compact('cotizaciones'));
     }
 
     public static function addNewDoc(Request $request){
@@ -60,11 +60,25 @@ class Archivos extends Controller
         return $list;
     }
 
-    public function print($id){
+    public static function getDataEdit($id){
+        $fact = DB::table('factura')
+            ->join('cliente', 'factura.id_cliente', '=', 'cliente.id')
+            ->where('factura.id', $id)
+            ->select('factura.id as idfactura','factura.*', 'cliente.*')
+            ->first();
+                
+        $ite = DB::table('items')
+            ->where('id_factura', $id)
+            ->get();
+        
+        return array($fact, $ite);
+    }
+    
+    public function print($id, $tipo){
         $factura = DB::table('factura')
             ->join('cliente', 'factura.id_cliente', '=', 'cliente.id')
             ->where('factura.id', $id)
-            ->select('factura.*', 'cliente.*')
+            ->select('factura.id as idfactura','factura.*', 'cliente.*')
             ->first();
                 
         $items = DB::table('items')
@@ -78,7 +92,8 @@ class Archivos extends Controller
 
         $totalLetras = cifrasEnLetras::convertirCifrasEnLetras($total);
 
-        return view('printingLay')
+        return view('printingLay')        
+            ->with(compact('tipo'))
             ->with(compact('factura'))
             ->with(compact('items'))
             ->with(compact('total'))
