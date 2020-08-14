@@ -13,7 +13,7 @@
             <img src="{{asset('../resources/img/info.png')}}" width="400">
         </div>
         <div class="col-3">
-            <p style="font-family: Verdana; font-size:25; color: rgb(115, 188, 167)">{{$tipo==0?'Cotización':'Cuenta de cobro'}} ID {{$factura->idfactura}}</p>
+            <p style="font-family: Verdana; font-size:25; color: rgb(115, 188, 167)">{{$tipo==0?'Cotización':'Cuenta de cobro'}} N° {{$factura->idfactura}}</p>
         </div>
     </div>  
     <br>

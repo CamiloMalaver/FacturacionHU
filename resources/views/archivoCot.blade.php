@@ -12,7 +12,7 @@
         <tbody>
             @foreach($cotizaciones as $cot)
                 <tr>
-                    <td>{{$cot->consecutivo}}</td>
+                    <td>{{$cot->id}}</td>
                     <td>{{$cot->created_at}}</td>
                     <td>{{$cot->nombre}}</td>
                     <td>
@@ -76,7 +76,8 @@
                     $('#editClientName').val(data[0].id_cliente);
                     $('#editCreatedAt').val(data[0].created_at);
                     $('#editFVenc').val(data[0].fecha_venci);
-                    
+                    $('#idFactura').val(identificador);
+
                     data[1].forEach(element => {
                         $(wrapper2).append(
                             '<div class="container">'+
@@ -102,17 +103,17 @@
   </script>
 <!--Ventanas modales-->
 
-    <!-- Modal Crear-->
+    <!-- Modal Editar-->
     <div class="modal fade" id="editDoc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header justify-content-center" style="background-color: rgb(164, 212, 196)">
                     <h3 class="modal-title font-weight-bold" id="exampleModalLabel" style="color: white;">Editor de factura</h3>
                 </div>
-                <form method="POST" action="{{route('postAddDoc')}}" autocomplete="off">
+                <form method="POST" action="{{route('postUpdateDoc')}}" autocomplete="off">
                     @csrf
                     <div class="modal-body">      
-
+                        <input id="idFactura" name="idFactura" type="hidden">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect02">Cliente</label>
@@ -154,7 +155,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-success">Crear</button>
+                        <button type="submit" class="btn btn-warning">Actualizar</button>
                     </div>
                 </form>    
             </div>

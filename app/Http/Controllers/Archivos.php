@@ -18,12 +18,8 @@ class Archivos extends Controller
     }
 
     public static function addNewDoc(Request $request){
-        //Cuenta los registros para definir el consecutivo
-        $consecutivo = DB::table('factura')
-            ->where('tipo', 0)
-            ->count() + 1;
-        //Crea la factura
-        DB::insert('INSERT INTO `factura`(`id_cliente`, `tipo`, `created_at`,`fecha_venci`,`consecutivo`) VALUES (?,?,?,?,?)', [$request->cliente, 0, $request->fcreacion, $request->fvencimiento, $consecutivo]);
+       //Crea la factura
+        DB::insert('INSERT INTO `factura`(`id_cliente`, `created_at`,`fecha_venci`) VALUES (?,?,?)', [$request->cliente, $request->fcreacion, $request->fvencimiento]);
         //Obtiene id de factura creada
         $idFactura = DB::table('factura')
             ->select('id')            
@@ -49,12 +45,35 @@ class Archivos extends Controller
             session(['clientSaved' => '¡Se ha agregado el doc!']);        
             return back();
     }
+    public static function updateDoc(Request $request){
+            DB::table('items')
+                ->where('id_factura',$request->idFactura)
+                ->delete();
+                
+            $fields = [];
+            $itemList = $request->field_name;
+            $cont = 0;
+            foreach($itemList as $item){           
+                $fields[$cont] = $item;           
+                if($cont == 2){
+                    
+                    DB::insert('INSERT INTO `items`(`id_factura`, `cantidad`, `descripcion`, `valor_u`)
+                                VALUES (?,?,?,?)', [$request->idFactura, $fields[0], $fields[1], $fields[2]]);
+
+                    $fields = [];
+                    $cont = 0;
+                }else{
+                    $cont++;
+                }          
+            }
+            session(['clientSaved' => '¡Se ha actualizado el doc!']);        
+            return back();
+    }
 
     public static function listCotizacion(){
         $list = DB::table('factura')
         ->join('cliente', 'factura.id_cliente', '=', 'cliente.id')
         ->select('factura.*', 'cliente.nombre')
-        ->where('tipo',0)       
         ->latest()
         ->get();
         return $list;
